@@ -78,7 +78,7 @@
     	<div class="container-wrap">
     		<div class="row no-gutters d-flex">
 
-			<?php include ("get_products.php");?>
+			<?php include "get_products.php";?>
 
 			<?php foreach ($products as $product) {?>
 
@@ -88,7 +88,21 @@
     					<div class="text p-4">
 						<h3><?php echo $product['product_name']; ?></h3>
                         <p><?php echo $product['product_description']; ?></p>
-                        <p class="price"><span><?php echo $product['product_price']; ?></span><a href="#" class="ml-2 btn btn-white btn-outline-white">Order</a></p>
+                        <p class="price"><span><?php echo $product['product_price']; ?></span>
+
+						<a href="#" class="ml-2 btn btn-white btn-outline-white">Order</a>
+
+						<form method="POST" action="cart.php">
+							<input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>" />
+							<input type="hidden" name="product_name" value="<?php echo $product['product_name']; ?>" />
+							<input type="hidden" name="product_description" value="<?php echo $product['product_description']; ?>" />
+							<input type="hidden" name="product_price" value="<?php echo $product['product_price']; ?>" />
+							<input type="hidden" name="product_special_offer" value="<?php echo $product['product_special_offer']; ?>" />
+							<input type="hidden" name="product_category" value="<?php echo $product['product_category']; ?>" />
+							<input type="hidden" name="product_image" value="<?php echo $product['product_image']; ?>" />
+							<input type="submit" value="Order"/>
+						</form>
+					</p>
     					</div>
     				</div>
     			</div>
