@@ -78,9 +78,9 @@
     	<div class="container-wrap">
     		<div class="row no-gutters d-flex">
 
-			<?php include ('get_products.php'); ?>
+			<?php include 'get_products.php';?>
 
-<?php foreach ($products as $product) { ?>
+<?php foreach ($products as $product) {?>
     <div class="col-lg-4 d-flex ftco-animate">
         <div class="services-wrap d-flex">
             <a href="#" class="img" style="background-image: url(assets/images/<?php echo $product['product_image']; ?>);"></a>
@@ -97,13 +97,14 @@
                         <input type="hidden" name="product_special_offer" value="<?php echo $product['product_special_offer']; ?>" />
                         <input type="hidden" name="product_category" value="<?php echo $product['product_category']; ?>" />
                         <input type="hidden" name="product_image" value="<?php echo $product['product_image']; ?>" />
-                        <input type="submit" value="Order"/>
+                        <input type="hidden" name="product_quantity" value="1"/>
+						<input type="submit" value="Order"/>
                     </form>
                 </p>
             </div>
         </div>
     </div>
-<?php } ?>
+<?php }?>
 
 
     		</div>
